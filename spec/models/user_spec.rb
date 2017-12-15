@@ -17,6 +17,13 @@ RSpec.describe User, type: :model do
 
       expect(user).not_to be_valid
     end 
+
+    it "requires a unique username" do 
+      create(:user, user_name: "unique_username")
+      user = build(:user, user_name: "unique_username")
+
+      expect(user).not_to be_valid
+    end 
   end
 
   describe "creating a user" do
