@@ -13,4 +13,11 @@ RSpec.describe Category, type: :model do
       expect(category).not_to be_valid
     end 
   end 
+  
+   it "has many cryptocurrencies" do 
+      category = build(:category)
+
+      expect(category).to respond_to(:cryptocurrencies)
+    end 
+
 end

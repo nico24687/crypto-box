@@ -1,0 +1,14 @@
+<%= form_for [current_user, @cryptocurrency] do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :amount %>
+  <%= f.number_field :amount %>
+  
+  <%= f.label :symbol %>
+  <%= f.text_field :symbol %>
+
+  <%= f.collection_select :category_id, Category.all, :id, :title, {prompt: "Select a category"}  %>
+
+  <%= f.submit %>
+<% end %>
