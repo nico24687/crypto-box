@@ -5,4 +5,5 @@ class Cryptocurrency < ApplicationRecord
   belongs_to :category
   has_many :cryptocurrency_images
   has_many :images, through: :cryptocurrency_images
+
 end

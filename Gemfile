@@ -42,7 +42,7 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'factory_bot_rails'
   gem 'faker'
-  gem 'carrierwave', '~> 1.0'
+
 
 
 end
