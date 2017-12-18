@@ -31,8 +31,14 @@ class CryptocurrenciesController < ApplicationController
    
   end 
 
-  def destory 
-
+  def destroy 
+    @cryptocurrency = Cryptocurrency.find(params[:id])
+    if @cryptocurrency.destroy
+      flash[:success] = "Successfully deleted your cryptocurrency"
+      redirect_to user_cryptocurrencies_path(params[:user_id])
+    else
+      render :index
+    end 
   end 
 
   def edit 

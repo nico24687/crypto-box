@@ -5,6 +5,7 @@
   <p> <%= cryptocurrency.amount %></p>
   <p> <%= cryptocurrency.symbol %></p>
   <%= link_to "Edit", edit_user_cryptocurrency_path(params[:user_id], cryptocurrency)  %>
+  <%= link_to "Delete", user_cryptocurrency_path(params[:user_id], cryptocurrency), method: :delete %>
 <% end %>
 
 <%= link_to "Add a cryptocurrency",  new_user_cryptocurrency_path(params[:user_id]) %>
