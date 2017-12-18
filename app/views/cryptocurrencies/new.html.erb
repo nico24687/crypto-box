@@ -11,8 +11,7 @@
   <%= f.collection_select :category_id, Category.all, :id, :title, {prompt: "Select a category"}  %>
 
   <%= f.label :cryptocurrency_images %>
-  <%= f.file_field :avatars, multiple: true %>
-
+  <%= f.select :image_ids, Image.all.collect {|x| [x.url, x.id]}, {}, :multiple => true %>
 
   <%= f.submit %>
 <% end %>

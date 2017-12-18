@@ -63,6 +63,6 @@ class CryptocurrenciesController < ApplicationController
   private 
   
   def cryptocurrency_params 
-    params.require(:cryptocurrency).permit(:name, :amount, :symbol, :category_id)
+    params.require(:cryptocurrency).permit(:name, :amount, :symbol, :category_id, image_ids: [])
   end 
 end
