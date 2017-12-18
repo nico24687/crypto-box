@@ -7,7 +7,8 @@ class SessionsController < ApplicationController
     user = User.find_by(user_name: user_params[:user_name])
     if user && user.authenticate(user_params[:password])
       session[:user_id] = user.id
-      redirect_to user_path(user)
+      flash[:success] = "Welcome #{user.user_name}"
+      redirect_to user_cryptocurrencies_path(user)
     else
       render :new
     end

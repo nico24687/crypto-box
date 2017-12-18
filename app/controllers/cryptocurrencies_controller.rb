@@ -1,7 +1,7 @@
 class CryptocurrenciesController < ApplicationController 
 
   def index 
-    @cryptocurrencies = current_user.cryptocurrencies
+    @cryptocurrencies = Cryptocurrency.where(user_id: params[:user_id])
   end
 
   def new 
