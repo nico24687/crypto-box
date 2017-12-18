@@ -1,1 +1,7 @@
 <h1>Admin Categories</h1>
+
+<% @categories.each do |category|%>
+  <p><%= category.title %>: <%= category.description %></p>
+<% end %>
+
+<%= link_to "Create new category", new_admin_category_path %>
