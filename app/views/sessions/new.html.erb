@@ -1,11 +1,26 @@
-<h1>Login below</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+          <h1>Login</h1>
+        </div>
+    </div>
+     <div class="row">
+        <div class="col-md-3">
+        <%= form_tag login_path do %>
+          <%= label_tag :username %>
+          <%= text_field_tag "user[user_name]" %>
+         
 
-<%= form_tag login_path do %>
-  <%= label_tag :username %>
-  <%= text_field_tag "user[user_name]" %>
+          <%= label_tag :password %>
+          <%= password_field_tag "user[password]" %>
 
-  <%= label_tag :password %>
-  <%= password_field_tag "user[password]" %>
+          <%= submit_tag "Login", :class => 'btn btn-sm btn-pill btn-success',style: 'float:right; margin-top: 40px;' %>
+        <% end %>
 
-  <%= submit_tag "Login" %>
-<% end %>
+        </div>
+    </div>
+</div>
+
+
+
+

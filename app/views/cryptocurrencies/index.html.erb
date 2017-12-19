@@ -1,11 +1,74 @@
-<h1>Explore or add to your portfolio below</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+        
+          <nav aria-label="breadcrumb" role="navigation">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="/">Home</a></li>
+              <li class="breadcrumb-item active" aria-current="page"><%= current_user.user_name %> Portfolio</li>
+            </ol>
+          </nav>
 
-<% @cryptocurrencies.each do |cryptocurrency| %>
-  <p> <%= cryptocurrency.name %></p>
-  <p> <%= cryptocurrency.amount %></p>
-  <p> <%= cryptocurrency.symbol %></p>
-  <%= link_to "Edit", edit_user_cryptocurrency_path(params[:user_id], cryptocurrency)  %>
-  <%= link_to "Delete", user_cryptocurrency_path(params[:user_id], cryptocurrency), method: :delete %>
-<% end %>
+        </div>
+    </div>
+</div>
 
-<%= link_to "Add a cryptocurrency",  new_user_cryptocurrency_path(params[:user_id]) %>
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+          <h1>Your portfolio</h1>
+          <p>Explore your current allocations below</p>
+          <%= link_to "Add cryptocurrency",  new_user_cryptocurrency_path(params[:user_id]), :class => "btn btn-sm btn-pill btn-success  ",  style: 'float:right;' %>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+        <p></p>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+        <p></p>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+
+          <div class="row">
+
+            <% @cryptocurrencies.each do |cryptocurrency| %>
+            <div class="col-sm-6 col-md-4">
+              <div class="thumbnail">
+                <img data-src="holder.js/100%x200" alt="100%x200" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMjQyIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDI0MiAyMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxkZWZzLz48cmVjdCB3aWR0aD0iMjQyIiBoZWlnaHQ9IjIwMCIgZmlsbD0iI0VFRUVFRSIvPjxnPjx0ZXh0IHg9IjkxLjc5Njg3NSIgeT0iMTAwIiBzdHlsZT0iZmlsbDojQUFBQUFBO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1mYW1pbHk6QXJpYWwsIEhlbHZldGljYSwgT3BlbiBTYW5zLCBzYW5zLXNlcmlmLCBtb25vc3BhY2U7Zm9udC1zaXplOjExcHQ7ZG9taW5hbnQtYmFzZWxpbmU6Y2VudHJhbCI+MjQyeDIwMDwvdGV4dD48L2c+PC9zdmc+" data-holder-rendered="true" style="height: 200px; width: 100%; display: block;">
+                <div class="caption">
+                  <h3 id="thumbnail-label"><%= cryptocurrency.name %><small> (<%= cryptocurrency.symbol %>)</small></h3>
+                  <p>Tokens held: <%= cryptocurrency.amount %></p>
+                  <p><%= link_to "Edit", edit_user_cryptocurrency_path(params[:user_id], cryptocurrency), :class => "btn btn-xs btn-pill btn-warning"  %> <%= link_to "Delete", user_cryptocurrency_path(params[:user_id], cryptocurrency), :class => "btn btn-xs btn-pill btn-danger", method: :delete %></p>
+                </div>
+              </div>
+            </div>
+            <% end %>
+           
+
+          </div>
+
+
+        
+        </div>
+    </div>
+</div>
+
+
+

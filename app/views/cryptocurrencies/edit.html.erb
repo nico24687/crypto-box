@@ -1,14 +1,45 @@
-<%= form_for [@user, @cryptocurrency] do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+          <h1>Edit <%= @cryptocurrency.name %> </h1>
+          <p>Alter the attributes of this coin below and save your changes</p>
+        </div>
+    </div>
+     <div class="row">
+        <div class="col-md-3">
 
-  <%= f.label :amount %>
-  <%= f.number_field :amount %>
-  
-  <%= f.label :symbol %>
-  <%= f.text_field :symbol %>
+          <%= form_for [@user, @cryptocurrency] do |f| %>
+            <%= f.label :name %>
+            <%= f.text_field :name, :class => "form-control" %>
 
-  <%= f.collection_select :category_id, Category.all, :id, :title, {prompt: "Select a category"}  %>
+            <%= f.label :amount %>
+            <%= f.number_field :amount, :class => "form-control" %>
+            
+            <%= f.label :symbol %>
+            <%= f.text_field :symbol, :class => "form-control" %>
 
-  <%= f.submit %>
-<% end %>
+            <%= f.label :category %>
+            <%= f.collection_select :category_id, Category.all, :id, :title, {prompt: "Select a category"}, {class: "form-control"}  %>
+
+           
+
+            <%= f.submit 'Update cryptocurrency',:class => 'btn btn-sm btn-pill btn-success',style: 'float:right; margin-top: 40px;'  %>
+           
+          <% end %>
+        
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
