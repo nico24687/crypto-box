@@ -1,5 +1,50 @@
-<h1>All Images</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+          <h1>Images</h1>
+          <%= link_to "Create new image", new_admin_image_path, :class => "btn btn-sm btn-pill btn-success  ",  style: 'float:right;'  %>
+          <p>Explore existing images or create a new one with your admin rights</p>
+        </div>
+    </div>
+</div>
 
-<% @images.each do |image| %>
-   <%= image_tag(image.url, width: 200) %>
-<% end %>
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+        <p></p>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+        <p></p>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+        
+          <div class="row">
+
+            <% @images.each do |image| %>
+            <div class="col-xs-6 col-md-3">
+              <a href="#" class="thumbnail">
+                <img data-src="holder.js/100%x180" alt="100%x180" src="<%= image.url %>" data-holder-rendered="true" style="height: 180px; width: 100%; display: block;">
+              </a>
+            </div>
+            <% end %>
+
+          </div>
+
+    
+        </div>
+    </div>
+</div>
+

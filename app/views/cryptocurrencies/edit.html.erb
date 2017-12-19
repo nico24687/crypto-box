@@ -1,6 +1,27 @@
 <div class="container">
     <div class="row">
         <div class="col-xs-12">
+        
+          <nav aria-label="breadcrumb" role="navigation">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="/">Home</a></li>
+              <li class="breadcrumb-item"><a href="/users/<%= @user.id %>/cryptocurrencies"><%= current_user.user_name %> Portfolio</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Edit</li>
+            </ol>
+          </nav>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
           <h1>Edit <%= @cryptocurrency.name %> </h1>
           <p>Alter the attributes of this coin below and save your changes</p>
         </div>
