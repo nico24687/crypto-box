@@ -57,7 +57,7 @@
             <% @cryptocurrencies.each do |cryptocurrency| %>
             <div class="col-sm-6 col-md-4">
               <div class="thumbnail">
-                <img data-src="holder.js/100%x200" alt="100%x200" src= "https://cdn.dribbble.com/users/721524/screenshots/3895840/bit_hub_03_1x.png" data-holder-rendered="true" style="height: 200px; width: 100%; display: block;">
+                <img data-src="holder.js/100%x200" alt="100%x200" src= <%= cryptocurrency.images[0].url %> data-holder-rendered="true" style="height: 200px; width: 100%; display: block;">
                 <div class="caption">
                   <h3 id="thumbnail-label"><%= cryptocurrency.name %><small> (<%= cryptocurrency.symbol %>)</small></h3>
                   <p>Tokens held: <%= cryptocurrency.amount %></p>

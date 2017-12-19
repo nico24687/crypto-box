@@ -42,6 +42,10 @@
             <%= f.label :category %>
             <%= f.collection_select :category_id, Category.all, :id, :title, {prompt: "Select a category"}, {class: "form-control"}  %>
 
+            <%= f.label :cryptocurrency_images %>
+            <%= f.select :image_ids, Image.all.collect {|x| [x.url, x.id]}, {}, :multiple => true %>
+
+
            
 
             <%= f.submit 'Update cryptocurrency',:class => 'btn btn-sm btn-pill btn-success',style: 'float:right; margin-top: 40px;'  %>
