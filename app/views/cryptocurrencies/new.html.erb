@@ -1,17 +1,47 @@
-<%= form_for [current_user, @cryptocurrency] do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+          <h1>New cryptocurrency</h1>
+          <p>Enter the details for your new asset in the form below</p>
+        </div>
+    </div>
+</div>
 
-  <%= f.label :amount %>
-  <%= f.number_field :amount %>
-  
-  <%= f.label :symbol %>
-  <%= f.text_field :symbol %>
 
-  <%= f.collection_select :category_id, Category.all, :id, :title, {prompt: "Select a category"}  %>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+        
+        <%= form_for [current_user, @cryptocurrency] do |f| %>
+          <%= f.label :name %>
+          <%= f.text_field :name, :class => "form-control" %>
 
-  <%= f.label :cryptocurrency_images %>
-  <%= f.select :image_ids, Image.all.collect {|x| [x.url, x.id]}, {}, :multiple => true %>
+          <%= f.label :amount %>
+          <%= f.number_field :amount, :class => "form-control" %>
+          
+          <%= f.label :symbol %>
+          <%= f.text_field :symbol, :class => "form-control"   %>
 
-  <%= f.submit %>
-<% end %>
+          <%= f.label :category %>
+          <%= f.collection_select :category_id, Category.all, :id, :title, {prompt: "Select a category"}, {class: "form-control"}   %>
+
+          <%= f.label :cryptocurrency_images %>
+          <%= f.select :image_ids, Image.all.collect {|x| [x.url, x.id]}, {}, :multiple => true %>
+
+          <%= f.submit "Create cryptocurrency", :class => 'btn btn-sm btn-pill btn-success',style: 'float:right; margin-top: 40px;' %>
+        <% end %>
+        
+        
+        
+        
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+

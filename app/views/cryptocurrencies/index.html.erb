@@ -16,12 +16,18 @@
 
 
 
+
 <div class="container">
     <div class="row">
         <div class="col-xs-12">
+         <%= link_to "Log out",  root_path, :class => "btn btn-sm btn-pill btn-default  ",  style: 'float:right;' %>
           <h1>Your portfolio</h1>
           <p>Explore your current allocations below</p>
           <%= link_to "Add cryptocurrency",  new_user_cryptocurrency_path(params[:user_id]), :class => "btn btn-sm btn-pill btn-success  ",  style: 'float:right;' %>
+          <% if current_user.admin? %>
+            <%= link_to "Add category",  admin_categories_path, :class => "btn btn-sm btn-pill btn-primary",  style: 'float:right; margin-right: 10px;' %>
+            <%= link_to "Add image",  admin_images_path, :class => "btn btn-sm btn-pill btn-info  ",  style: 'float:right; margin-right: 10px;' %>
+          <% end %>
         </div>
     </div>
 </div>
@@ -51,7 +57,7 @@
             <% @cryptocurrencies.each do |cryptocurrency| %>
             <div class="col-sm-6 col-md-4">
               <div class="thumbnail">
-                <img data-src="holder.js/100%x200" alt="100%x200" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMjQyIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDI0MiAyMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxkZWZzLz48cmVjdCB3aWR0aD0iMjQyIiBoZWlnaHQ9IjIwMCIgZmlsbD0iI0VFRUVFRSIvPjxnPjx0ZXh0IHg9IjkxLjc5Njg3NSIgeT0iMTAwIiBzdHlsZT0iZmlsbDojQUFBQUFBO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1mYW1pbHk6QXJpYWwsIEhlbHZldGljYSwgT3BlbiBTYW5zLCBzYW5zLXNlcmlmLCBtb25vc3BhY2U7Zm9udC1zaXplOjExcHQ7ZG9taW5hbnQtYmFzZWxpbmU6Y2VudHJhbCI+MjQyeDIwMDwvdGV4dD48L2c+PC9zdmc+" data-holder-rendered="true" style="height: 200px; width: 100%; display: block;">
+                <img data-src="holder.js/100%x200" alt="100%x200" src= "https://cdn.dribbble.com/users/721524/screenshots/3895840/bit_hub_03_1x.png" data-holder-rendered="true" style="height: 200px; width: 100%; display: block;">
                 <div class="caption">
                   <h3 id="thumbnail-label"><%= cryptocurrency.name %><small> (<%= cryptocurrency.symbol %>)</small></h3>
                   <p>Tokens held: <%= cryptocurrency.amount %></p>
