@@ -7,6 +7,7 @@ class UsersController < ApplicationController
     @user = User.create(user_params)
     if @user.save
       flash[:success] = "Welcome #{@user.user_name}"
+      session[:user_id] = @user.id
       redirect_to  user_cryptocurrencies_path(@user)
     else
       flash[:alert] = "User already exists"
