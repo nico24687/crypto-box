@@ -2,7 +2,6 @@ class CryptocurrenciesController < ApplicationController
   before_action :require_owner, only: [:new, :create, :destroy, :edit, :update]
 
   def current_owner?
-  
     params[:user_id].to_i == current_user.id
   end
 
@@ -11,7 +10,8 @@ class CryptocurrenciesController < ApplicationController
   end
 
   def index 
-    @cryptocurrencies = Cryptocurrency.where(user_id: params[:user_id])
+    @cryptocurrencies = Cryptocurrency.where(user_id: params[:user_id]) 
+    @btc = Cryptocompare::Price.find('BTC', 'USD')["BTC"]["USD"]
   end
 
   def new 
