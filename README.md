@@ -1,24 +1,106 @@
-# README
+<p align="center">
+  <img src="https://cdn2.iconfinder.com/data/icons/bitcoin-line/1024/bitcoin_box-512.png" alt="Adop Shop logo"/>
+</p>
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Crypto Box
 
-Things you may want to cover:
+[![forthebadge](http://forthebadge.com/images/badges/made-with-ruby.svg)](http://forthebadge.com)
+[![forthebadge](http://forthebadge.com/images/badges/built-with-love.svg)](http://forthebadge.com)
 
-* Ruby version
+A simpler way to manage crypto asset holdings. Users can track their current portfolio allocations whilst monitoring the price of bitcoin in real time. For each asset images can be assigned, helping to further guide investment decisions. 
 
-* System dependencies
+## Getting Started
 
-* Configuration
 
-* Database creation
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-* Database initialization
+### Prerequisites
 
-* How to run the test suite
+Ensure you have rails installed, if not:
 
-* Services (job queues, cache servers, search engines, etc.)
+```
+gem install rails 
+```
 
-* Deployment instructions
+### Installing
 
-* ...
+To get up and running in your browser clone this repo 
+
+Install the dependenices
+
+```
+bundle install 
+```
+
+Create the database
+
+```
+rails db:create
+```
+
+Run the migrations
+
+```
+rails db:migrate
+```
+
+Start the server
+
+```
+rails server
+```
+
+Visit localhost:3000 in your browser to start managing your portfolio 
+
+## Running the tests
+
+Install the dependencies
+
+```
+bundle install
+```
+
+Run rspec
+
+```
+rspec
+```
+
+
+### Test Example
+
+Each test ensures working functionality for a particular user story. 
+
+```
+describe "user login" do 
+  it "can log a user in " do 
+    create(:user, user_name: "nico24687", password: "donothackin")
+
+    visit login_path 
+
+    fill_in "user[user_name]", with: "nico24687"
+    fill_in "user[password]", with: "donothackin"
+
+    click_on "Login"
+
+    expect(page).to have_content("Welcome nico24687")
+  end 
+end 
+```
+
+## Built With
+
+* [Rails](https://github.com/rails/rails) 
+* [Bootstrap](https://github.com/twbs/bootstrap-rubygem) 
+
+## Versioning
+
+Version 1.0
+
+## Authors
+
+* **Nico Lewis** [contact](https://github.com/nico24687)
+
+## License
+
+This project is licensed under the MIT License 
