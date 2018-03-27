@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://cdn2.iconfinder.com/data/icons/bitcoin-line/1024/bitcoin_box-512.png" alt="Adop Shop logo"/>
+  <img src="https://images.vexels.com/media/users/3/146452/isolated/preview/ff1dff030e21fb04a43b2303f3d75ec2-open-cardboard-box-icon-by-vexels.png" alt="Adop Shop logo"/>
 </p>
 
 # Crypto Box
