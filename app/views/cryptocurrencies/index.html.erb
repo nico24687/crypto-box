@@ -23,7 +23,7 @@
          <%= link_to "Log out",  root_path, :class => "btn btn-sm btn-pill btn-default  ",  style: 'float:right;' %>
           <p>1BTC = $<%= @btc %></p>
           <h1>Your portfolio</h1>
-          <p>Explore your current allocations below</p>
+          <p>Explore your current market allocations below</p>
           <%= link_to "Add cryptocurrency",  new_user_cryptocurrency_path(params[:user_id]), :class => "btn btn-sm btn-pill btn-success  ",  style: 'float:right;' %>
           <% if current_user.admin? %>
             <%= link_to "Add category",  admin_categories_path, :class => "btn btn-sm btn-pill btn-primary",  style: 'float:right; margin-right: 10px;' %>
